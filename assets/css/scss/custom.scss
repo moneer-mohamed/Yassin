@@ -1,0 +1,242 @@
+/*--------------------------------------------------------------
+# Start About section
+--------------------------------------------------------------*/
+
+.custom_row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.about_section {
+    padding: 100px 0;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: visible;
+    .main-heading {
+        margin-bottom: 20px;
+    }
+    .generic-content {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .main-btn {
+            padding: 7px 40px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+    .generic-section-bg {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        right: 0;
+        left: 0;
+        width: 100%;
+        z-index: -0001;
+    }
+    .img {
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+/*--------------------------------------------------------------
+# End About section
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Start ceo_bg Section
+--------------------------------------------------------------*/
+
+.ceo_bg {
+    margin: 30px 0;
+    background-image: url(../../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    .sp_title {
+        color: #fff;
+        font-weight: 900;
+        font-size: 31px;
+    }
+    .info {
+        background-color: rgba(0, 36, 49, 0.87);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+        .content {
+            padding: 0 120px;
+            &:first-of-type {
+                margin-bottom: 30px;
+            }
+            p {
+                color: #D8D8D8;
+                font-size: 15px;
+                margin: 10px 0;
+            }
+        }
+    }
+    .play {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(#ed2a28 50%, #e9ecef 52%);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.play-btn::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 2px solid #e9ecef;
+    opacity: 1;
+    border-radius: 50%;
+    top: -50%;
+    left: -50%;
+    animation: pulsate-btn 2s infinite;
+}
+
+.play-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-40%) translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    z-index: 100;
+    transition: 0.6s;
+}
+
+.play-btn:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-40%) translateY(-50%);
+    width: 0;
+    height: 0;
+    border: none;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    z-index: 101;
+    animation: none;
+    border-radius: 0;
+}
+
+.play-btn:hover::after {
+    border-left: 15px solid #ed2a28;
+    transform: scale(20);
+}
+
+@keyframes pulsate-btn {
+    0% {
+        transform: scale(0.3, 0.3);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# End ceo_bg Section
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# start clients section
+--------------------------------------------------------------*/
+
+.clients_section {
+    margin: 30px 0 50px;
+    .content {
+        margin-top: 40px;
+    }
+    .owl-carousel {
+        .owl-item {
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .item {
+            padding: 15px;
+            transition: .3s;
+            .box {
+                background-color: #FAFAFA;
+                padding: 20px;
+                border-radius: 5px;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .owl-item img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+}
+
+
+/*--------------------------------------------------------------
+# End clients section
+--------------------------------------------------------------*/
+
+@media (min-width: 900px) {
+    .generic-content h2 {
+        font-size: 2.5em;
+    }
+}
+
+@media(max-width:1199.98px) {
+    .about_section {
+        padding: 50px 0;
+    }
+    .ceo_bg .info .content {
+        padding: 0 60px;
+    }
+}
+
+@media(max-width:991.98px) {
+    .about_section .generic-content {
+        height: auto;
+        display: block;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    .ceo_bg {
+        .info {}
+        .play {
+            display: none;
+        }
+    }
+}
