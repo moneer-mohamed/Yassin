@@ -7,8 +7,38 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.no-gutters>.col,
+.no-gutters>[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.page-main-section {
+    padding-top: 100px;
+}
+
+.forcefullwidth_wrapper_tp_banner {
+    direction: ltr;
+}
+
+#rev_slider_3 {
+    .text_p {
+        line-height: normal !important;
+    }
+    .main-btn {
+        margin: 10px 15px 30px !important;
+    }
 }
 
 .about_section {
@@ -211,6 +241,79 @@
 # End clients section
 --------------------------------------------------------------*/
 
+
+/*--------------------------------------------------------------
+# Start about page
+--------------------------------------------------------------*/
+
+#our-services {
+    .feature_box {
+        z-index: 1;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        background-color: #fff;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: -32px;
+            left: -32px;
+            background: #ed2a28;
+            height: 32px;
+            width: 32px;
+            border-radius: 32px;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-transition: -webkit-transform 1s ease-out;
+            transition: -webkit-transform 1s ease-out;
+            transition: transform 1s ease-out;
+            transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+        }
+        h4,
+        p,
+        a,
+        .icon {
+            -webkit-transition: all .5s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+            -ms-transition: all .5s ease-in-out;
+            -o-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+        }
+        .link_arrow {
+            &:hover {
+                &:after {
+                    color: #fff !important;
+                }
+            }
+        }
+        &:hover {
+            color: #fff;
+            &:before {
+                -webkit-transform: scale(50);
+                transform: scale(50);
+            }
+            .description h4,
+            a {
+                color: #fff;
+            }
+            .icon {
+                background-color: #fff;
+                i {
+                    color: #ed2a28
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------------------
+# End about page
+--------------------------------------------------------------*/
+
 @media (min-width: 900px) {
     .generic-content h2 {
         font-size: 2.5em;
@@ -234,9 +337,42 @@
         margin-bottom: 40px;
     }
     .ceo_bg {
-        .info {}
-        .play {
+        .info {
             display: none;
         }
+        .play_box {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            &:after {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 36, 49, 0.5);
+            }
+            .play {
+                z-index: 1;
+                position: relative;
+            }
+        }
+    }
+}
+
+@media(max-width:767.98px) {
+    .property-query-area.property-page-bg {
+        .btn_fill {
+            margin-top: 30px;
+        }
+    }
+}
+
+@media(max-width:575.98px) {
+    .property-tab .nav-tabs {
+        display: block;
+        max-width: 100%;
+        overflow-y: auto;
     }
 }
